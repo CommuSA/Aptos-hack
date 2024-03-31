@@ -43,7 +43,7 @@ const Home: React.FC<HomeProps> = ({ account, signAndSubmitTransaction }) => {
         try {
             const todoListResource = await client.getAccountResource(
                 account?.address,
-                `${moduleAddress}::todolist::TodoList`
+                `${moduleAddress}::toControl::TodoList`
             );
             setAccountHasList(true);
             // tasks table handle
@@ -56,7 +56,7 @@ const Home: React.FC<HomeProps> = ({ account, signAndSubmitTransaction }) => {
             while (counter <= taskCounter) {
                 const tableItem = {
                     key_type: "u64",
-                    value_type: `${moduleAddress}::todolist::Task`,
+                    value_type: `${moduleAddress}::toControl::Task`,
                     key: `${counter}`,
                 };
                 const task = await client.getTableItem(tableHandle, tableItem);
@@ -76,7 +76,7 @@ const Home: React.FC<HomeProps> = ({ account, signAndSubmitTransaction }) => {
         // build a transaction payload to be submited
         const payload = {
             type: "entry_function_payload",
-            function: `${moduleAddress}::todolist::create_list`,
+            function: `${moduleAddress}::toControl::create_list`,
             type_arguments: [],
             arguments: [],
         };
@@ -100,7 +100,7 @@ const Home: React.FC<HomeProps> = ({ account, signAndSubmitTransaction }) => {
         // build a transaction payload to be submited
         const payload = {
             type: "entry_function_payload",
-            function: `${moduleAddress}::todolist::create_task`,
+            function: `${moduleAddress}::toControl::create_task`,
             type_arguments: [],
             arguments: [newTask],
         };
@@ -148,7 +148,7 @@ const Home: React.FC<HomeProps> = ({ account, signAndSubmitTransaction }) => {
         setTransactionInProgress(true);
         const payload = {
             type: "entry_function_payload",
-            function: `${moduleAddress}::todolist::complete_task`,
+            function: `${moduleAddress}::toControl::complete_task`,
             type_arguments: [],
             arguments: [taskId],
         };

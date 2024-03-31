@@ -1,5 +1,4 @@
-module todolist_addr::todolist {
-
+module CommuSA_addr::todolist {
   use aptos_framework::account;
   use std::signer;
   use aptos_framework::event;

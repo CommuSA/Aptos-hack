@@ -6,6 +6,7 @@ version = '1.0.0'
 git = 'https://github.com/aptos-labs/aptos-core.git'
 rev = 'devnet'
 subdir = 'aptos-move/framework/aptos-framework'
+rabe = "0.3.1"
 
 [addresses]
-todolist_addr='4d318344b89623a4f28196fff8ffcdc406d0746214553e0111aeed5a89bfa322'
+CommuSA_addr='4d318344b89623a4f28196fff8ffcdc406d0746214553e0111aeed5a89bfa322'
