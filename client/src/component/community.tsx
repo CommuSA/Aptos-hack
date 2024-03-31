@@ -31,9 +31,6 @@ const Home: React.FC<HomeProps> = ({ account, signAndSubmitTransaction }) => {
         fetchList();
     }, [account?.address]);
 
-    // const onClick = (e: any) => {
-    //     console.log('click ', e);
-    // };
     const onWriteTask = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setNewTask(value);
